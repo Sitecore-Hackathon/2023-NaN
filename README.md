@@ -78,12 +78,16 @@ After installation, make the following settings:
 
 ## Usage instructions
 
-> When you create new content item content with be generated automatically based on item`s name.
+When you create new content item content with be generated automatically based on item`s name.
 
->Additionaly, for any item you can use context menu to populate content with AI:
+Additionaly, for any item you can use context menu to populate content with AI:
+
 1. Click `Fill with AI content`
+
 ![image](https://user-images.githubusercontent.com/6066018/222933143-0373ee3f-8654-45cb-9ff9-70bd6dc521d7.png)
+
 2. Type short topic for content generation:
+
 ![image](https://user-images.githubusercontent.com/6066018/222933379-eba5718c-3477-41ff-9a24-169e562de76f.png)
 
 
