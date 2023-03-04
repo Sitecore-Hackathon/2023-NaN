@@ -82,4 +82,6 @@ After installation, make the following settings:
 2. This template has `Enable AI Content Generation` checkbox that is enabled by default, by you can disable it in future.
 ![image](https://user-images.githubusercontent.com/6066018/222932130-3bec9ab7-c52d-4787-82a6-6584cf11d6b9.png)
 
+3. Additionaly for any item you can use context menu to populate content with AI:
+![image](https://user-images.githubusercontent.com/6066018/222933143-0373ee3f-8654-45cb-9ff9-70bd6dc521d7.png)
 
