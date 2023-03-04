@@ -76,6 +76,7 @@ After installation, make the following settings:
 -  This template has `Enable AI Content Generation` checkbox that is enabled by default, by you can disable it in future.
 ![image](https://user-images.githubusercontent.com/6066018/222932130-3bec9ab7-c52d-4787-82a6-6584cf11d6b9.png)
 
+
 ## Usage instructions
 
 When you create new content item content with be generated automatically based on item`s name.
