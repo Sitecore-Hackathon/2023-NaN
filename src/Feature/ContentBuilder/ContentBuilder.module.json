@@ -1,0 +1,15 @@
+{
+	"namespace": "EditorsCopilot.Feature.ContentBuilder",
+	"items": {
+		"includes":[
+		{
+			"name" : "templates",
+			"path" : "/sitecore/templates/Feature/EditorsCopilot"
+		},
+		{
+			"name" : "modules",
+			"path" : "/sitecore/system/Modules/Editors Copilot"
+		}
+		]
+	}
+}

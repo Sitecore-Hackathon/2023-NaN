@@ -4,6 +4,11 @@
         <PlatformVersion>10.3.0</PlatformVersion>
     </PropertyGroup>
     <ItemGroup>
+
+
+<PackageReference Update="Sitecore.XmCloud.Kernel" Version="1.2.505" />
+
+
         <PackageReference Update="Sitecore.Nexus" Version="$(PlatformVersion)"/>
         <PackageReference Update="Sitecore.Kernel" Version="$(PlatformVersion)"/>
         <PackageReference Update="Sitecore.Mvc" Version="$(PlatformVersion)"/>
