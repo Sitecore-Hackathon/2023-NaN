@@ -1,10 +1,11 @@
-using EditorsCopilot.Foundation.OpenAI.Core;
+﻿using EditorsCopilot.Foundation.OpenAI.Core;
 using EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Security;
 using EditorsCopilot.Foundation.OpenAI.Core.Core.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
-namespace EditorsCopilot.Foundation.OpenAI.Test
+namespace Test
 {
-
     [TestClass]
     public class OpenApiTest
     {
@@ -16,7 +17,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Test
         {
             credentials = new OpenAiCredentials()
             {
-                ApiToken = "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",
+                ApiToken = "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",
             };
 
             Api = new OpenAPI(credentials);
