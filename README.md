@@ -42,6 +42,19 @@ The easiest way to install module is a standart deploy to XM Cloud by using Site
 2. Connect to XM Cloud environment: `sitecore cloud environment connect -id {your_env_id} --allow-write true`,
 3. Deploy solution: `sitecore cloud deployment create --environment-id {your_env_id} --upload`.
 
+Full list of commands required:
+
+```powershell
+dotnet tool restore                                                                 # restore all tools
+dotnet sitecore cloud login                                                         # login in xmcloud
+dotnet sitecore cloud project list                                                  # to get list of projects
+dotnet sitecore cloud environment list --project-id <project-id>                    # to get environment by project id
+dotnet sitecore cloud deployment create --environment-id <environment-id> --upload  # deploy the application
+```
+
+More details can be found in the [documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--creating-an-xm-cloud-project-using-the-sitecore-cli.html).
+
+
 ### Configuration
 1. Get an API key on this service: https://platform.openai.com/account/api-keys,
 2. Navigate to XM Cloud Content Editor and replace *Api Key* value for `/sitecore/system/Modules/Editors Copilot` item.
