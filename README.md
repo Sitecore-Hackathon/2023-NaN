@@ -64,7 +64,6 @@ After installation, make the following settings:
 
 2. Navigate to XM Cloud Content Editor and replace *Api Key* value for `/sitecore/system/Modules/Editors Copilot` item.
 
-
 ![image](https://user-images.githubusercontent.com/6066018/222931875-06ebc62a-73f8-41e9-8cab-a01a735a51f8.png)
 
 3. To enable auto AI content generation for all content items **(under /sitecore/content)** enable *Generate* checkbox in module item in `/sitecore/system/Modules/Editors Copilot`:
@@ -73,15 +72,12 @@ After installation, make the following settings:
 
 4. If you need AI content generation only for specific templates than:
 - Disable *Generate* checkbox in module item
-
+- Inherit templates that need AI content generation from `/sitecore/templates/Feature/EditorsCopilot/Editors Copilot Template`
+-  This template has `Enable AI Content Generation` checkbox that is enabled by default, by you can disable it in future.
+![image](https://user-images.githubusercontent.com/6066018/222932130-3bec9ab7-c52d-4787-82a6-6584cf11d6b9.png)
 
 ## Usage instructions
 
-1. Inherit templates that need AI content generation from `/sitecore/templates/Feature/EditorsCopilot/Editors Copilot Template`,
-
-2. This template has `Enable AI Content Generation` checkbox that is enabled by default, by you can disable it in future.
-![image](https://user-images.githubusercontent.com/6066018/222932130-3bec9ab7-c52d-4787-82a6-6584cf11d6b9.png)
-
-3. Additionaly for any item you can use context menu to populate content with AI:
+For any item you can use context menu to populate content with AI:
 ![image](https://user-images.githubusercontent.com/6066018/222933143-0373ee3f-8654-45cb-9ff9-70bd6dc521d7.png)
 
