@@ -14,7 +14,7 @@ Best Enhancement to XM Cloud
 
 Editor's Copilot is based on OpenAI's GPT (Generative Pre-trained Transformer) model, which has been trained on a massive amount of code from open-source repositories. This makes it a powerful tool for generating high-quality.
 
-  - The purpose of Editor's Copilot is to help editors write text more efficiently and accurately by reducing the time spent on writing.
+  - The purpose of Editor's Copilot is to help editors to populate content more efficiently and accurately by reducing the time spent on writing.
   - At the first stage, it solves the problem of filling the content with test data based on the data already entered. Potentially - to tell the editor exactly what he wants to write in the future
 - The model solves the problem of filling with test content by generating text and images based on the entered data (Item name, values entered in text fields). The module automatically suggests and fills in the fields of the page with text and images.
 
@@ -29,41 +29,35 @@ A short video describing how it works
 
 ## Pre-requisites and Dependencies
 
-First of all you need to get an API key on this service:
-https://platform.openai.com/account/api-keys
+> Sitecore XM
+> Sitecore CLI
+> Get an API key on this service: https://platform.openai.com/account/api-keys
 
-Copy it and add it to the configuration. How to do this is described below
 
 ## Installation instructions
-⟹ Write a short clear step-wise instruction on how to install your module.  
 
-> _A simple well-described installation process is required to win the Hackathon._  
-> Feel free to use any of the following tools/formats as part of the installation:
-> - Sitecore Package files
-> - Docker image builds
-> - Sitecore CLI
-> - msbuild
-> - npm / yarn
-> 
-> _Do not use_
-> - TDS
-> - Unicorn
- 
-for example:
+The easiest way to install module is a standart deploy to XM Cloud by using Sitecore CLI:
 
-1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-2. ...
-3. profit
+1. Run powershell in the solution root folder,
+2. Connect to XM Cloud environment: `sitecore cloud environment connect -id {your_env_id} --allow-write true`,
+3. Deploy solution: `sitecore cloud deployment create --environment-id {your_env_id} --upload`.
 
 ### Configuration
-⟹ If there are any custom configuration that has to be set manually then remember to add all details here.
-
-_Remove this subsection if your entry does not require any configuration that is not fully covered in the installation instructions already_
+1. Get an API key on this service: https://platform.openai.com/account/api-keys,
+2. Navigate to XM Cloud Content Editor and replace *Api Key* value for `/sitecore/system/Modules/Editors Copilot` item.
+![image](https://user-images.githubusercontent.com/6066018/222931875-06ebc62a-73f8-41e9-8cab-a01a735a51f8.png)
 
 ## Usage instructions
-⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
 
-Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
+> To enable auto AI content generation for all content items **(under /sitecore/content)** enable *Generate* checkbox in module item:
+![image](https://user-images.githubusercontent.com/6066018/222931998-e770ca7f-2877-4f5e-af0f-d626fdf02ce6.png)
+
+> If you need AI content generation only for specific templates than:
+1. Disable *Generate* checkbox in module item,
+2. Inherit templates that need AI content generation from `/sitecore/templates/Feature/EditorsCopilot/Editors Copilot Template`,
+3. This template has `Enable AI Content Generation` checkbox that is enabled by default, by you can disable it in future.
+![image](https://user-images.githubusercontent.com/6066018/222932130-3bec9ab7-c52d-4787-82a6-6584cf11d6b9.png)
+
 
 ![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
 
