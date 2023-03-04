@@ -45,12 +45,14 @@ The easiest way to install module is a standart deploy to XM Cloud by using Site
 ### Configuration
 1. Get an API key on this service: https://platform.openai.com/account/api-keys,
 2. Navigate to XM Cloud Content Editor and replace *Api Key* value for `/sitecore/system/Modules/Editors Copilot` item.
+
 ![image](https://user-images.githubusercontent.com/6066018/222931875-06ebc62a-73f8-41e9-8cab-a01a735a51f8.png)
 
 ## Usage instructions
 
 > To enable auto AI content generation for all content items **(under /sitecore/content)** enable *Generate* checkbox in module item:
-![image](https://user-images.githubusercontent.com/6066018/222931998-e770ca7f-2877-4f5e-af0f-d626fdf02ce6.png)
+![image](https://user-images.githubusercontent.com/6066018/222932235-67cce51b-bbc6-4c2e-a5ad-84410d1e65d4.png)
+
 
 > If you need AI content generation only for specific templates than:
 1. Disable *Generate* checkbox in module item,
