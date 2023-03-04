@@ -3,12 +3,13 @@ using EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Security;
 using OpenAI_API;
 using System;
 using System.Collections.Generic;
+using EditorsCopilot.Foundation.OpenAI.Core.Internal;
 
 namespace EditorsCopilot.Foundation.OpenAI.Core.Abstract
 {
     public abstract class OpenApiConnector
     {
-        protected OpenAIAPI Client { get; private set; }
+        protected CustomOpenAIAPI Client { get; private set; }
         protected IOpenAiCredentials Options { get; private set; }
 
         public OpenApiConnector(IOpenAiCredentials credentials)
@@ -16,7 +17,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Abstract
             if (credentials == null)
                 throw new ArgumentNullException(nameof(credentials));
             Options = credentials;
-            Client = new OpenAIAPI(new APIAuthentication(credentials.ApiToken));
+            Client = new CustomOpenAIAPI(new APIAuthentication(credentials.ApiToken));
         }
 
         #region IoC

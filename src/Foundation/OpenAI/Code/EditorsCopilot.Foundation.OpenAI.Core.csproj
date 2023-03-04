@@ -47,6 +47,9 @@
     <Compile Include="Core\Interfaces\Controllers\IOpenAiTextController.cs" />
     <Compile Include="Core\Interfaces\Security\IOpenAiCredentials.cs" />
     <Compile Include="Core\Models\OpenAiCredentials.cs" />
+    <Compile Include="Internal\CustomOpenAIAPI.cs" />
+    <Compile Include="Internal\Images\CustomEndpointBase.cs" />
+    <Compile Include="Internal\Images\ImagesEndpoint.cs" />
     <Compile Include="OpenAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\AsyncHelper.cs" />
