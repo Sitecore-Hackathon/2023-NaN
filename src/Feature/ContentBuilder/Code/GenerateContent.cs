@@ -14,7 +14,7 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core
 
        // protected IContext Context { get; } = ServiceLocator.ServiceProvider.GetService<IContext>();
 
-        public void OnItemCreated(object sender, EventArgs args)
+        public void OnItemAdded(object sender, EventArgs args)
         {
             //SitecoreEventArgs sitecoreEventArgs = args as SitecoreEventArgs;
             //if (!(Event.ExtractParameter(args, 0) is ItemCreatingEventArgs parameter) )
@@ -22,8 +22,11 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core
             //if (sitecoreEventArgs != null)
             //    sitecoreEventArgs.Result.Cancel = true;
 
-            Item item = Event.ExtractParameter(args, 0) as Item;
-            if(item==null)
+            if (args == null)
+                return;
+
+            var item = Event.ExtractParameter(args, 0) as Item;
+            if (item == null)
                 return;
 
             var module = item.Database.GetItem(Constants.Items.Module);
