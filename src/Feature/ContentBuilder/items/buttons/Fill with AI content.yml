@@ -1,10 +1,12 @@
----
+﻿---
 ID: "1ad0ab8d-4dc8-42ca-b8a2-954d9686943b"
 Parent: "7f6326fd-165a-44f1-a99d-a318aed94569"
 Template: "998b965e-6ab8-4568-810f-8101d60d0cc3"
 Path: /sitecore/content/Applications/Content Editor/Context Menues/Default/Fill with AI content
-DB: core
 SharedFields:
+- ID: "335c6760-6c0e-4c6c-814c-a53d203f553e"
+  Hint: Icon
+  Value: Office/32x32/cube_molecule2.png
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 1800
@@ -32,7 +34,7 @@ Languages:
         sitecore\admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "14e1fe17-4c03-40cd-b566-5868caf807a7"
+      Value: "1d20c607-4f26-460b-b94f-e402c5d390de"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -42,4 +44,4 @@ Languages:
       Value: 20060215T132523
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230304T212224Z
+      Value: 20230304T224435Z
