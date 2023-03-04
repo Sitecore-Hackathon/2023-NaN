@@ -24,7 +24,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers
                 new CompletionRequest($"continue the headline: {text}",
                     model: Model.CurieText, temperature: 0.1)));
 
-            return result.ToString();
+            return result.ToString().Trim();
         }
 
         public string GetDescription(string text)
@@ -33,7 +33,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers
                 new CompletionRequest($"continue short description: {text}",
                     model: Model.CurieText, temperature: 0.1)));
 
-            return result.ToString();
+            return result.ToString().Trim();
         }
 
         public string GetFullText(string text)
@@ -42,7 +42,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers
                 new CompletionRequest($"explain: {text}",
                     model: Model.CurieText, temperature: 0.1)).Result;
 
-            return result.ToString();
+            return result.ToString().Trim();
         }
     }
 }

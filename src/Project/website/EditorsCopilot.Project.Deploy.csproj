@@ -95,13 +95,20 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="RichardSzalay.Helix.Publishing.WebRoot" />
+      <PackageReference Include="Sitecore.Kernel" />
+      <PackageReference Include="Sitecore.Mvc" />
+      <PackageReference Include="Sitecore.Assemblies.Platform" />
+      <PackageReference Include="RichardSzalay.Helix.Publishing.WebRoot" />
     
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Feature\ContentBuilder\Code\EditorsCopilot.Feature.ContentBuilder.Core.csproj">
       <Project>{95f9ed3b-1ee2-4c70-8d0f-610be9613b35}</Project>
       <Name>EditorsCopilot.Feature.ContentBuilder.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Foundation\OpenAI\Code\EditorsCopilot.Foundation.OpenAI.Core.csproj">
+      <Project>{8a47ac46-715f-4ea2-86d2-b1bb90130fe3}</Project>
+      <Name>EditorsCopilot.Foundation.OpenAI.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Controllers;
+using Microsoft.Extensions.DependencyInjection;
 using Sitecore;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
@@ -41,7 +42,7 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Commands
                         var item = Database.GetItem(uri);
                         var topic = args.Result;
                         Log.Info($"Generate content for item '{item.ID}' and topic '{args.Result}'", this);
-                        var service = (IOpenAiTextController) ServiceLocator.ServiceProvider.GetService(typeof(IOpenAiTextController));
+                        var service = ServiceLocator.ServiceProvider.GetService<IOpenAiTextController>();
                         Log.Info($"OpenAI result: title = '{service?.GetTitle(topic)}'", this);
                         Context.ClientPage.SendMessage(this, "item:load(id=" + item.ID + ")");
                     }
