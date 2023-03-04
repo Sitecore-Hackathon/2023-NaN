@@ -23,5 +23,23 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers
 
             return result.ToString();
         }
+
+        public string GetDescription(string text)
+        {
+            var result = Client.Completions.CreateCompletionAsync(
+               new CompletionRequest($"continue short description: {text}",
+                   model: Model.CurieText, temperature: 0.1)).Result;
+
+            return result.ToString();
+        }
+
+        public string GetFullText(string text)
+        {
+            var result = Client.Completions.CreateCompletionAsync(
+               new CompletionRequest($"explain: {text}",
+                   model: Model.CurieText, temperature: 0.1)).Result;
+
+            return result.ToString();
+        }
     }
 }
