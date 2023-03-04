@@ -15,10 +15,6 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Abstract
         {
             if (credentials == null)
                 throw new ArgumentNullException(nameof(credentials));
-
-            if (string.IsNullOrWhiteSpace(credentials.ApiToken))
-                throw new ArgumentNullException(nameof(credentials.ApiToken));
-
             Options = credentials;
             Client = new OpenAIAPI(new APIAuthentication(credentials.ApiToken));
         }

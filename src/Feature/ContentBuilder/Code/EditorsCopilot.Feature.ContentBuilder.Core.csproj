@@ -42,16 +42,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\AutoGenerateContentCommand.cs" />
+    <Compile Include="Configurators\ContentBuilderConfigurator.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="GenerateContent.cs" />
     <Compile Include="MediaItemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IItemContentService.cs" />
+    <Compile Include="Services\ItemContentService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_config\Include\Feature\EditorsCopilot.Feature.ContentBuilder.config" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Sitecore.Kernel" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\OpenAI\Code\EditorsCopilot.Foundation.OpenAI.Core.csproj">
+      <Project>{8a47ac46-715f-4ea2-86d2-b1bb90130fe3}</Project>
+      <Name>EditorsCopilot.Foundation.OpenAI.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

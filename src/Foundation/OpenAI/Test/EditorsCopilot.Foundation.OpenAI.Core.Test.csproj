@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Code\EditorsCopilot.FoundationOpenAI.Core.csproj">
-      <Project>{8A47AC46-715F-4EA2-86D2-B1BB90130FE3}</Project>
-      <Name>EditorsCopilot.FoundationOpenAI.Core</Name>
+    <ProjectReference Include="..\Code\EditorsCopilot.Foundation.OpenAI.Core.csproj">
+      <Project>{8a47ac46-715f-4ea2-86d2-b1bb90130fe3}</Project>
+      <Name>EditorsCopilot.Foundation.OpenAI.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

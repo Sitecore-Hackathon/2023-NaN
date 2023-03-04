@@ -8,6 +8,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Controllers
 {
     public interface IOpenAiTextController
     {
+        bool IsValid { get; }
         string GetTitle(string text);
 
         string GetDescription(string text);
