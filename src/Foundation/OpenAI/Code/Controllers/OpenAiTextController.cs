@@ -4,7 +4,6 @@ using EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Controllers;
 using EditorsCopilot.Foundation.OpenAI.Core.Internal;
 using EditorsCopilot.Foundation.OpenAI.Core.Internal.Images;
 using EditorsCopilot.Foundation.OpenAI.Core.Tools;
-using OpenAI_API;
 using OpenAI_API.Completions;
 using OpenAI_API.Models;
 
@@ -13,6 +12,8 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers
     public class OpenAiTextController : BaseApiController<OpenAiTextController>,
         IOpenAiTextController
     {
+        public const double Temperature = 0.7;
+        
         public OpenAiTextController(CustomOpenAIAPI client)
             : base(client)
         {
@@ -24,7 +25,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers
         {
             var result = AsyncHelper.RunSync(() => Client.Completions.CreateCompletionAsync(
                 new CompletionRequest($"Explain one sentence: '{text}'",
-                    model: Model.CurieText, temperature: 0.1, max_tokens: 257)));
+                    model: Model.CurieText, temperature: Temperature, max_tokens: 257)));
 
             return result.ToString().Trim();
         }
@@ -33,7 +34,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers
         {
             var result = AsyncHelper.RunSync(() => Client.Completions.CreateCompletionAsync(
                 new CompletionRequest($"Explain in a few sentences : '{text}'",
-                    model: Model.CurieText, temperature: 0.1, max_tokens: 512)));
+                    model: Model.CurieText, temperature: Temperature, max_tokens: 512)));
 
             return result.ToString().Trim();
         }
@@ -42,7 +43,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers
         {
             var result = AsyncHelper.RunSync(() => Client.Completions.CreateCompletionAsync(
                 new CompletionRequest($"Explain: {text}",
-                    model: Model.CurieText, temperature: 0.1, max_tokens: 1027)));
+                    model: Model.CurieText, temperature: Temperature, max_tokens: 1027)));
 
             return result.ToString().Trim();
         }

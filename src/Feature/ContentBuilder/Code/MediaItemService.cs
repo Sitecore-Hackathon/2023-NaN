@@ -7,6 +7,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Net;
+using Sitecore.Data.Events;
 
 namespace EditorsCopilot.Feature.ContentBuilder.Core
 {

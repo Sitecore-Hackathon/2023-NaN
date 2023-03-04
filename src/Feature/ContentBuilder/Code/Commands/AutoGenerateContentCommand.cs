@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using EditorsCopilot.Feature.ContentBuilder.Core.Services;
+﻿using EditorsCopilot.Feature.ContentBuilder.Core.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Sitecore;
 using Sitecore.Data;
-using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.DependencyInjection;
 using Sitecore.Diagnostics;
@@ -29,68 +26,41 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Commands
             }
         }
 
-        protected void Run(Sitecore.Web.UI.Sheer.ClientPipelineArgs args)
+        protected void Run(ClientPipelineArgs args)
         {
             if (args.IsPostBack)
             {
                 if ((!string.IsNullOrEmpty(args.Result)) && args.Result != "undefined")
                 {
-                    var uriParam = args.Parameters["itemUri"];
-                    if (ItemUri.IsItemUri(uriParam))
+                    var item = GetItem(args);
+                    if (item != null)
                     {
-                        var uri = ItemUri.Parse(uriParam);
-                        var item = Database.GetItem(uri);
                         var topic = args.Result;
                         Log.Info($"Generate content for item '{item.ID}' and topic '{args.Result}'", this);
                         var service = ServiceLocator.ServiceProvider.GetService<IItemContentService>();
                         service?.PopulateItemContent(topic, item);
-                        Context.ClientPage.SendMessage(this, "item:load(id=" + item.ID + ")");
+                        Context.ClientPage.ClientResponse.Timer("item:load(id=" + item.ID + ")", 0);
                     }
                 }
             }
             else
             {
-                SheerResponse.Input("Please enter topic for your item", string.Empty);
+                var item = GetItem(args);
+                SheerResponse.Input("Please enter topic for your item", item?.Name ?? string.Empty);
                 args.WaitForPostBack();
             }
         }
 
-        protected void RunGenerateForNextField(ClientPipelineArgs args)
+        private static Item GetItem(ClientPipelineArgs args)
         {
-            if ((!string.IsNullOrEmpty(args.Result)) && args.Result != "undefined")
+            var uriParam = args.Parameters["itemUri"];
+            if (ItemUri.IsItemUri(uriParam))
             {
-                var uriParam = args.Parameters["itemUri"];
-                if (ItemUri.IsItemUri(uriParam))
-                {
-                    var uri = ItemUri.Parse(uriParam);
-                    var item = Database.GetItem(uri);
-                    Log.Info($"Generate content for item '{item.ID}' and topic '{args.Result}'", this);
-                    Context.ClientPage.SendMessage(this, "item:load(id=" + item.ID + ")");
-                }
+                var uri = ItemUri.Parse(uriParam);
+                return Database.GetItem(uri);
             }
-        }
 
-        private IList<Field> GetFields(Item item)
-        {
-            return item.Fields.Where(x => !InternalFields.Contains(x.ID)).ToList();
+            return null;
         }
-
-        protected static readonly ID[] InternalFields = new ID[]
-        {
-            FieldIDs.Created,
-            FieldIDs.CreatedBy,
-            FieldIDs.Updated,
-            FieldIDs.UpdatedBy,
-            FieldIDs.ValidFrom,
-            FieldIDs.ValidTo,
-            FieldIDs.WorkflowState,
-            FieldIDs.Lock,
-            FieldIDs.Revision,
-            FieldIDs.ReminderDate,
-            FieldIDs.ReminderRecipients,
-            FieldIDs.ReminderText,
-            FieldIDs.HideVersion,
-            FieldIDs.Owner
-        };
     }
 }
