@@ -52,7 +52,12 @@
   <ItemGroup>
     <PackageReference Include="Sitecore.Kernel" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\OpenAI\Code\EditorsCopilot.FoundationOpenAI.Core.csproj">
+      <Project>{8a47ac46-715f-4ea2-86d2-b1bb90130fe3}</Project>
+      <Name>EditorsCopilot.FoundationOpenAI.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
     <PropertyGroup>
         <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
         <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

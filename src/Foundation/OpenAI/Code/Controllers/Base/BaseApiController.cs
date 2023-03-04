@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using OpenAI_API;
+﻿using OpenAI_API;
 using System;
 
 namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers.Base
@@ -8,15 +7,10 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers.Base
     {
         protected OpenAIAPI Client { get; private set; }
         
-        protected ILogger<T> Logger { get; private set; }
-
         protected BaseApiController(OpenAIAPI client)
         {
             if (client == null)
                 throw new ArgumentNullException(nameof(client));
-
-            Logger = LoggerFactory.Create(options => { }).CreateLogger<T>()
-                ?? throw new ArgumentNullException(nameof(Logger));
 
             Client = client;
         }

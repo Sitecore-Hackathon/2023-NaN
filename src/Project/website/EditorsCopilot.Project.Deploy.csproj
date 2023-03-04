@@ -105,9 +105,9 @@
         <Project>{95f9ed3b-1ee2-4c70-8d0f-610be9613b35}</Project>
         <Name>EditorsCopilot.Feature.ContentBuilder.Core</Name>
       </ProjectReference>
-      <ProjectReference Include="..\..\Foundation\OpenAI\Code\EditorsCopilot.Foundation.OpenAI.Core.csproj">
-        <Project>{6e2155b0-9aaa-412a-8128-01ae018893ad}</Project>
-        <Name>EditorsCopilot.Foundation.OpenAI.Core</Name>
+      <ProjectReference Include="..\..\Foundation\OpenAI\Code\EditorsCopilot.FoundationOpenAI.Core.csproj">
+        <Project>{8a47ac46-715f-4ea2-86d2-b1bb90130fe3}</Project>
+        <Name>EditorsCopilot.FoundationOpenAI.Core</Name>
       </ProjectReference>
     </ItemGroup>
     <PropertyGroup>

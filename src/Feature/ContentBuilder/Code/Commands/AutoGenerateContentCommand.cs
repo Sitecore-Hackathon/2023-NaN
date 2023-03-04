@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using EditorsCopilot.Foundation.OpenAI.Core;
+using EditorsCopilot.Foundation.OpenAI.Core.Core.Models;
 using Sitecore;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
@@ -10,7 +12,7 @@ using Sitecore.Web.UI.Sheer;
 
 namespace EditorsCopilot.Feature.ContentBuilder.Core.Commands
 {
-    public class AutoGenerateContentCommand: Command
+    public class AutoGenerateContentCommand : Command
     {
         public override void Execute(CommandContext context)
         {
@@ -25,7 +27,7 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Commands
                 Context.ClientPage.Start(this, "Run", parameters);
             }
         }
-        
+
         protected void Run(Sitecore.Web.UI.Sheer.ClientPipelineArgs args)
         {
             if (args.IsPostBack)
@@ -37,8 +39,16 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Commands
                     {
                         var uri = ItemUri.Parse(uriParam);
                         var item = Database.GetItem(uri);
+                        var topic = args.Result;
                         Log.Info($"Generate content for item '{item.ID}' and topic '{args.Result}'", this);
-                        Context.ClientPage.SendMessage(this, "item:load(id=" + item.ID + ")");   
+                        var credentials = new OpenAiCredentials()
+                        {
+                            ApiToken = "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",
+                        };
+
+                        var api = new OpenAPI(credentials);
+                        Log.Info($"OpenAI result: title = '{api.TextService.GetTitle(topic)}'", this);
+                        Context.ClientPage.SendMessage(this, "item:load(id=" + item.ID + ")");
                     }
                 }
             }
@@ -59,7 +69,7 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Commands
                     var uri = ItemUri.Parse(uriParam);
                     var item = Database.GetItem(uri);
                     Log.Info($"Generate content for item '{item.ID}' and topic '{args.Result}'", this);
-                    Context.ClientPage.SendMessage(this, "item:load(id=" + item.ID + ")");   
+                    Context.ClientPage.SendMessage(this, "item:load(id=" + item.ID + ")");
                 }
             }
         }
@@ -68,7 +78,7 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Commands
         {
             return item.Fields.Where(x => !InternalFields.Contains(x.ID)).ToList();
         }
-        
+
         protected static readonly ID[] InternalFields = new ID[]
         {
             FieldIDs.Created,
