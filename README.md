@@ -21,17 +21,18 @@ Editor's Copilot is based on OpenAI's GPT (Generative Pre-trained Transformer) m
 
 
 ## Video link
+
 A short video describing how it works
 
-⟹ [Youtube](http://youtube.com)
+ [Youtube](http://youtube.com)
 
 
 
 ## Pre-requisites and Dependencies
 
-> Sitecore XM
-> Sitecore CLI
-> Get an API key on this service: https://platform.openai.com/account/api-keys
+- Sitecore XM
+- Sitecore CLI
+- Get an API key on this service: https://platform.openai.com/account/api-keys
 
 
 ## Installation instructions
@@ -56,24 +57,34 @@ More details can be found in the [documentation](https://doc.sitecore.com/xmc/en
 
 
 ### Configuration
+
+After installation, make the following settings:
+
 1. Get an API key on this service: https://platform.openai.com/account/api-keys,
+
 2. Navigate to XM Cloud Content Editor and replace *Api Key* value for `/sitecore/system/Modules/Editors Copilot` item.
 
 ![image](https://user-images.githubusercontent.com/6066018/222931875-06ebc62a-73f8-41e9-8cab-a01a735a51f8.png)
 
-## Usage instructions
+3. To enable auto AI content generation for all content items **(under /sitecore/content)** enable *Generate* checkbox in module item in `/sitecore/system/Modules/Editors Copilot`:
 
-> To enable auto AI content generation for all content items **(under /sitecore/content)** enable *Generate* checkbox in module item:
 ![image](https://user-images.githubusercontent.com/6066018/222932235-67cce51b-bbc6-4c2e-a5ad-84410d1e65d4.png)
 
-
-> If you need AI content generation only for specific templates than:
-1. Disable *Generate* checkbox in module item,
-2. Inherit templates that need AI content generation from `/sitecore/templates/Feature/EditorsCopilot/Editors Copilot Template`,
-3. This template has `Enable AI Content Generation` checkbox that is enabled by default, by you can disable it in future.
+4. If you need AI content generation only for specific templates than:
+- Disable *Generate* checkbox in module item
+- Inherit templates that need AI content generation from `/sitecore/templates/Feature/EditorsCopilot/Editors Copilot Template`
+-  This template has `Enable AI Content Generation` checkbox that is enabled by default, by you can disable it in future.
 ![image](https://user-images.githubusercontent.com/6066018/222932130-3bec9ab7-c52d-4787-82a6-6584cf11d6b9.png)
 
+## Usage instructions
 
-![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
+> When you create new content item content with be generated automatically based on item`s name.
+
+>Additionaly, for any item you can use context menu to populate content with AI:
+1. Click `Fill with AI content`
+![image](https://user-images.githubusercontent.com/6066018/222933143-0373ee3f-8654-45cb-9ff9-70bd6dc521d7.png)
+2. Type short topic for content generation:
+![image](https://user-images.githubusercontent.com/6066018/222933379-eba5718c-3477-41ff-9a24-169e562de76f.png)
+
 
 
