@@ -52,9 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_config\Include\Feature\EditorsCopilot.Feature.ContentBuilder.config" />
-    <Content Include="xls\sample rendering.xslt">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="xsl\sample rendering.xslt" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Sitecore.Kernel" />
@@ -65,6 +63,7 @@
       <Name>EditorsCopilot.Foundation.OpenAI.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
