@@ -46,7 +46,7 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Commands
             else
             {
                 var item = GetItem(args);
-                SheerResponse.Input("Please enter topic for your item", item?.Name ?? string.Empty);
+                SheerResponse.Input("Are you sure to start generate content for the item via AI?\nIf yes, please enter a topic:", item?.Name ?? string.Empty, "Editors Copilot");
                 args.WaitForPostBack();
             }
         }

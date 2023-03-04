@@ -1,6 +1,5 @@
 ﻿using System;
 using EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Controllers;
-using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
@@ -32,9 +31,6 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Services
 
         private void PopulateItemContentInternal(string topic, Item item)
         {
-            var module = Database.GetDatabase(Constants.ModuleDatabase).GetItem(Constants.Items.Module);
-            CheckboxField generateContent = module.Fields[Constants.Fields.GerenateContent];
-            if (!generateContent.Checked) return;
             var ownFieldCollection = item.Template.OwnFields;
             using (new SecurityDisabler())
             {
