@@ -1,17 +1,13 @@
 ﻿using System;
-using Sitecore.Data;
-using Sitecore.Data.Events;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Events;
-using Sitecore.Globalization;
 using Sitecore.SecurityModel;
 
 namespace EditorsCopilot.Feature.ContentBuilder.Core
 {
     public class GenerateContent
     {
-
         private MediaItemService mediaItemService = new MediaItemService();
         
         public void OnItemAdded(object sender, EventArgs args)
@@ -32,9 +28,24 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core
             if (!item.Paths.FullPath.StartsWith("/sitecore/content"))
                 return;
 
+            
+
             var module = item.Database.GetItem(Constants.Items.Module);
-            CheckboxField generateContent = module.Fields[Constants.Fields.GerenateContent];
-            if (generateContent.Checked)
+
+            CheckboxField generateGlobal = module.Fields[Constants.Fields.GerenateContent];
+            bool gerenateContent = generateGlobal.Checked;
+
+            if (!gerenateContent)
+            {
+                CheckboxField enableOnItem = item.Fields[Constants.Fields.EnableAiGeneration];
+
+                if (enableOnItem != null && enableOnItem.Checked)
+                {
+                    gerenateContent = true;
+                }
+            }
+
+            if (gerenateContent)
             {
                 var text = item.Name;
                 // TODO: generate text and image for each custom field
