@@ -1,4 +1,5 @@
-﻿using EditorsCopilot.Foundation.OpenAI.Core.Controllers.Base;
+﻿using System;
+using System.Collections.Generic;
 using EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Security;
 using OpenAI_API;
 
@@ -20,32 +21,5 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Abstract
             Options = credentials;
             Client = new OpenAIAPI(new APIAuthentication(credentials.ApiToken));
         }
-
-        #region IoC
-
-        private readonly Dictionary<Type, object> _registry = new Dictionary<Type, object>();
-
-        public void Registration<T>(Func<T> func, bool overrideIfExists = true) where T
-            : BaseApiController<T>
-        {
-            Type key = typeof(T);
-            if (!overrideIfExists && _registry.ContainsKey(key))
-                return;
-
-            _registry[key] = new Lazy<T>(func);
-        }
-
-
-        public T GetController<T>() where T
-            : BaseApiController<T>
-        {
-            Type key = typeof(T);
-            if (!_registry.ContainsKey(key))
-                throw new KeyNotFoundException($"Controller {key.Name} is not registered.");
-
-            return ((Lazy<T>)_registry[key]).Value;
-        }
-
-        #endregion
     }
 }
