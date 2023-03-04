@@ -16,7 +16,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Test
         {
             credentials = new OpenAiCredentials()
             {
-                ApiToken = "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",
+                ApiToken = "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",
             };
 
             Api = new OpenAPI(credentials);
@@ -34,6 +34,23 @@ namespace EditorsCopilot.Foundation.OpenAI.Test
         public void Can_Provide_Valid_Title()
         {
             var text = Api.TextService.GetTitle("Arab Emirates");
+            Assert.IsNotNull(text);
+            Assert.IsTrue(text.Length < 255);
+        }
+
+
+        [TestMethod]
+        public void Can_Provide_Description()
+        {
+            var text = Api.TextService.GetDescription("Arab Emirates");
+            Assert.IsNotNull(text);
+            Assert.IsTrue(text.Length < 255);
+        }
+
+        [TestMethod]
+        public void Can_Provide_Full_Text()
+        {
+            var text = Api.TextService.GetFullText("Arab Emirates");
             Assert.IsNotNull(text);
             Assert.IsTrue(text.Length < 255);
         }
