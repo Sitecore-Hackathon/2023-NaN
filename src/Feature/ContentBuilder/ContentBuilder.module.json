@@ -9,6 +9,10 @@
 		{
 			"name" : "modules",
 			"path" : "/sitecore/system/Modules/Editors Copilot"
+		},
+		{
+			"name" : "sample",
+			"path" : "/sitecore/templates/Sample"
 		}
 		]
 	}
