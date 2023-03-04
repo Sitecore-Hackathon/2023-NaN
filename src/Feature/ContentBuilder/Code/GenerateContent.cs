@@ -29,6 +29,9 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core
             if (item == null)
                 return;
 
+            if (!item.Paths.FullPath.StartsWith("/sitecore/content"))
+                return;
+
             var module = item.Database.GetItem(Constants.Items.Module);
             CheckboxField generateContent = module.Fields[Constants.Fields.GerenateContent];
             if (generateContent.Checked)
