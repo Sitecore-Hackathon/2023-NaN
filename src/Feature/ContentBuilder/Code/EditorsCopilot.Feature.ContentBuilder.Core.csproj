@@ -52,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_config\Include\Feature\EditorsCopilot.Feature.ContentBuilder.config" />
+    <Content Include="xls\sample rendering.xslt">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Sitecore.Kernel" />

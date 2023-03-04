@@ -1,30 +1,19 @@
 ﻿using System;
 using EditorsCopilot.Feature.ContentBuilder.Core.Services;
 using Microsoft.Extensions.DependencyInjection;
-using Sitecore.Data;
-using Sitecore.Data.Events;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.DependencyInjection;
 using Sitecore.Events;
-using Sitecore.Globalization;
-using Sitecore.SecurityModel;
 
 namespace EditorsCopilot.Feature.ContentBuilder.Core
 {
     public class GenerateContent
     {
-
         private MediaItemService mediaItemService = new MediaItemService();
-        
+
         public void OnItemAdded(object sender, EventArgs args)
         {
-            //SitecoreEventArgs sitecoreEventArgs = args as SitecoreEventArgs;
-            //if (!(Event.ExtractParameter(args, 0) is ItemCreatingEventArgs parameter) )
-            //    return;
-            //if (sitecoreEventArgs != null)
-            //    sitecoreEventArgs.Result.Cancel = true;
-
             if (args == null)
                 return;
 
@@ -32,8 +21,31 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core
             if (item == null)
                 return;
 
-            var service = ServiceLocator.ServiceProvider.GetService<IItemContentService>();
-            service?.PopulateItemContent(item.Name, item);
+
+            if (!item.Paths.FullPath.StartsWith("/sitecore/content"))
+                return;
+
+            var module = item.Database.GetItem(Constants.Items.Module);
+
+            CheckboxField generateGlobal = module.Fields[Constants.Fields.GerenateContent];
+            bool gerenateContent = generateGlobal.Checked;
+
+            if (!gerenateContent)
+            {
+                CheckboxField enableOnItem = item.Fields[Constants.Fields.EnableAiGeneration];
+
+                if (enableOnItem != null && enableOnItem.Checked)
+                {
+                    gerenateContent = true;
+                }
+            }
+
+            if (gerenateContent)
+            {
+                var service = ServiceLocator.ServiceProvider.GetService<IItemContentService>();
+                service?.PopulateItemContent(item.Name, item);
+            }
+
         }
     }
 }
