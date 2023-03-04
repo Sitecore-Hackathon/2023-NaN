@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Security;
 using OpenAI_API;
+using System;
+using System.Collections.Generic;
 
 namespace EditorsCopilot.Foundation.OpenAI.Core.Abstract
 {
