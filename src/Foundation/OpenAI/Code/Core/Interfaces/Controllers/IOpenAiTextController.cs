@@ -14,5 +14,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Controllers
         string GetDescription(string text);
         
         string GetFullText(string text);
+
+        string GetImageUrl(string text);
     }
 }
