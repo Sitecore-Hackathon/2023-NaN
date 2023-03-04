@@ -21,7 +21,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers
         public string GetTitle(string text)
         {
             var result = AsyncHelper.RunSync(() => Client.Completions.CreateCompletionAsync(
-                new CompletionRequest($"continue the headline: {text}",
+                new CompletionRequest($"Explain in a few words: '{text}'",
                     model: Model.CurieText, temperature: 0.1)));
 
             return result.ToString().Trim();
@@ -30,7 +30,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers
         public string GetDescription(string text)
         {
             var result = AsyncHelper.RunSync(() => Client.Completions.CreateCompletionAsync(
-                new CompletionRequest($"continue short description: {text}",
+                new CompletionRequest($"Explain in a few sentences : '{text}'",
                     model: Model.CurieText, temperature: 0.1)));
 
             return result.ToString().Trim();
@@ -39,7 +39,7 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers
         public string GetFullText(string text)
         {
             var result = Client.Completions.CreateCompletionAsync(
-                new CompletionRequest($"explain: {text}",
+                new CompletionRequest($"Explain: {text}",
                     model: Model.CurieText, temperature: 0.1)).Result;
 
             return result.ToString().Trim();

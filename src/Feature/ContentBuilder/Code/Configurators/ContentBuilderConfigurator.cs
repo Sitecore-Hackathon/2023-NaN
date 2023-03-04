@@ -14,10 +14,10 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Configurators
         {
             serviceCollection.AddTransient<IOpenAiCredentials>(s =>
             {
-                var db = Database.GetDatabase("master");
+                var db = Database.GetDatabase(Constants.ModuleDatabase);
                 return new OpenAiCredentials()
                 {
-                    ApiToken = db?.GetItem("/sitecore/system/Modules/Editors Copilot")?.Fields["Api Key"]?.Value,
+                    ApiToken = db.GetItem(Constants.Items.Module)?.Fields[Constants.Fields.OpenAIKey]?.Value,
                 };
             });
             serviceCollection.AddSingleton<IItemContentService, ItemContentService>();

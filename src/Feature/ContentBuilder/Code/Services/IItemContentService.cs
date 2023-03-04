@@ -4,6 +4,6 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Services
 {
     public interface IItemContentService
     {
-        void PopulateItemContent(Item item);
+        void PopulateItemContent(string topic, Item item);
     }
 }

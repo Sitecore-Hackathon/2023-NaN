@@ -9,6 +9,7 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core
 {
     public static class Constants
     {
+        public const string ModuleDatabase = "master";
         public static class Items
         {
             public static ID Module = new ID("{ED8EF05E-A872-45E8-9E62-D9AD84AB8A34}");
