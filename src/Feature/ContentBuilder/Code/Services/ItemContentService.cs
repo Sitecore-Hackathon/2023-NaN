@@ -1,4 +1,5 @@
-﻿using EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Controllers;
+﻿using System;
+using EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Controllers;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
@@ -9,7 +10,7 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Services
 {
     public class ItemContentService : IItemContentService
     {
-        private IOpenAiTextController _openAi;
+        private readonly IOpenAiTextController _openAi;
         private readonly MediaItemService _mediaItemService = new MediaItemService();
 
         public ItemContentService(IOpenAiTextController openAi)
@@ -18,6 +19,18 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Services
         }
 
         public void PopulateItemContent(string topic, Item item)
+        {
+            try
+            {
+                PopulateItemContentInternal(topic, item);
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Error generate content", e, this);
+            }
+        }
+
+        private void PopulateItemContentInternal(string topic, Item item)
         {
             var module = Database.GetDatabase(Constants.ModuleDatabase).GetItem(Constants.Items.Module);
             CheckboxField generateContent = module.Fields[Constants.Fields.GerenateContent];
@@ -32,11 +45,7 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Services
                         var type = FieldTypeManager.GetField(item.Fields[field.Key]);
                         if (type != null)
                         {
-                            if (type is LinkField)
-                            {
-                            }
-
-                            else if (type is TextField)
+                            if (type is TextField)
                             {
                                 item[field.Key] = _openAi.GetTitle(topic);
                             }
