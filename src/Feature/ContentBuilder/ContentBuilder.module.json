@@ -8,7 +8,9 @@
 		},
 		{
 			"name" : "modules",
-			"path" : "/sitecore/system/Modules/Editors Copilot"
+			"path" : "/sitecore/system/Modules/Editors Copilot",
+			"scope": "SingleItem",
+			"allowedPushOperations": "CreateOnly"
 		},
 		{
 			"name" : "sample",
