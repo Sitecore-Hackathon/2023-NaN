@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using OpenAI_API;
+using System;
 
 namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers.Base
 {
