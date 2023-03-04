@@ -44,6 +44,7 @@
     <Compile Include="Commands\AutoGenerateContentCommand.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="GenerateContent.cs" />
+    <Compile Include="MediaItemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

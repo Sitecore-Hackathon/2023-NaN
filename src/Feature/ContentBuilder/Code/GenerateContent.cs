@@ -12,8 +12,8 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core
     public class GenerateContent
     {
 
-       // protected IContext Context { get; } = ServiceLocator.ServiceProvider.GetService<IContext>();
-
+        private MediaItemService mediaItemService = new MediaItemService();
+        
         public void OnItemAdded(object sender, EventArgs args)
         {
             //SitecoreEventArgs sitecoreEventArgs = args as SitecoreEventArgs;
@@ -56,7 +56,15 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core
                             }
                             else if (type is ImageField)
                             {
-
+                                // TODO: generate image 
+                                var url = "https://oaidalleapiprodscus.blob.core.windows.net/private/org-M5Ll0oTYLwDDPGNfDjFXe4yx/user-EhpUzsMXavmdjRzD6Okv0wTt/img-AYCZtKqj790G0sl01NSFFcV3.png?st=2023-03-04T18%3A42%3A59Z&se=2023-03-04T20%3A42%3A59Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-03-04T08%3A05%3A08Z&ske=2023-03-05T08%3A05%3A08Z&sks=b&skv=2021-08-06&sig=ks0tZoq4a/QCL4zcqYVfEtr4Jk51gZgxAVKbbBYk4Oc%3D";
+                                var media = mediaItemService.UrlToMediaItem(url, item.Database);
+                                if (media != null)
+                                {
+                                    ImageField imageField = item.Fields[field.Key];
+                                    imageField.MediaID = media.ID;
+                                }
+                                
                             }
                         }
                         //. string value = item.Fields[field.Key].Value;
