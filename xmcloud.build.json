@@ -1,0 +1,9 @@
+{
+  "deployItems": {
+    "modules": ["*.Foundation.*", "*.Feature.*", "*.Project.*"]
+  },
+  "buildTargets": 
+  [
+    "./src/Project/website/EditorsCopilot.Project.Deploy.csproj"
+  ]
+} 
