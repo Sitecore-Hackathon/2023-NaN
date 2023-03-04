@@ -16,6 +16,8 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Controllers
             
         }
 
+        public bool IsValid => !string.IsNullOrEmpty(Client.Auth.ApiKey);
+
         public string GetTitle(string text)
         {
             var result = AsyncHelper.RunSync(() => Client.Completions.CreateCompletionAsync(

@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-//using EditorsCopilot.Foundation.OpenAI.Core;
-//using EditorsCopilot.Foundation.OpenAI.Core.Core.Models;
+using EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Controllers;
 using Sitecore;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
+using Sitecore.DependencyInjection;
 using Sitecore.Diagnostics;
 using Sitecore.Shell.Framework.Commands;
 using Sitecore.Web.UI.Sheer;
@@ -41,13 +41,8 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Commands
                         var item = Database.GetItem(uri);
                         var topic = args.Result;
                         Log.Info($"Generate content for item '{item.ID}' and topic '{args.Result}'", this);
-                        //var credentials = new OpenAiCredentials()
-                        //{
-                        //    ApiToken = "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",
-                        //};
-
-                        //var api = new OpenAPI(credentials);
-                        //Log.Info($"OpenAI result: title = '{api.TextService.GetTitle(topic)}'", this);
+                        var service = (IOpenAiTextController) ServiceLocator.ServiceProvider.GetService(typeof(IOpenAiTextController));
+                        Log.Info($"OpenAI result: title = '{service?.GetTitle(topic)}'", this);
                         Context.ClientPage.SendMessage(this, "item:load(id=" + item.ID + ")");
                     }
                 }

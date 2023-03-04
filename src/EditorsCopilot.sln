@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorsCopilot.Project.Depl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenAI", "OpenAI", "{0B64B9DB-8664-4C84-A6E2-2704767FB2DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorsCopilot.FoundationOpenAI.Core", "Foundation\OpenAI\Code\EditorsCopilot.FoundationOpenAI.Core.csproj", "{8A47AC46-715F-4EA2-86D2-B1BB90130FE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorsCopilot.Foundation.OpenAI.Core", "Foundation\OpenAI\Code\EditorsCopilot.Foundation.OpenAI.Core.csproj", "{8A47AC46-715F-4EA2-86D2-B1BB90130FE3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditorsCopilot.Foundation.OpenAI.Core.Test", "Foundation\OpenAI\Test\EditorsCopilot.Foundation.OpenAI.Core.Test.csproj", "{F81F305A-83F2-496D-AE6E-D9ADBF11A674}"
 EndProject
