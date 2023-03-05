@@ -1,31 +1,64 @@
----
+﻿---
 ID: "ed8ef05e-a872-45e8-9e62-d9ad84ab8a34"
 Parent: "08477468-d438-43d4-9d6a-6d84a611971c"
 Template: "6357e2f4-2680-4c5e-832b-9e7567471874"
 Path: /sitecore/system/Modules/Editors Copilot
-DB: master
+SharedFields:
+- ID: "10d06985-dadc-4dc7-986f-1219e5b47e2a"
+  Hint: Gerenate
+  Value: 1
+- ID: "250d335a-d8c0-4d66-9e6f-b3b1a587f3bd"
+  Hint: Api Key
+  Value: "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"
 Languages:
-- Language: en
+- Language: "de-DE"
   Versions:
   - Version: 1
     Fields:
-    - ID: "10d06985-dadc-4dc7-986f-1219e5b47e2a"
-      Hint: Gerenate
-      Type: Checkbox
-      Value: 1
-    - ID: "250d335a-d8c0-4d66-9e6f-b3b1a587f3bd"
-      Hint: Api Key
-      Value: 123
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20230304T135124Z
+      Value: 20230304T235525Z
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "e0bd8c66-37d7-43d8-8690-45daedf20c36"
+      Value: "4ee5eb4a-2503-4553-933d-ee55812b4eb1"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230304T135131Z
+      Value: 20230304T235528Z
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230304T135124Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d53a545b-2325-4a6e-a97e-14c117cc23fb"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230304T195603Z
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230304T235623Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a34921e6-8fc9-4f63-9990-f7b46df06a31"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230304T235623Z

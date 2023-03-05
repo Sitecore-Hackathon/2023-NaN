@@ -9,12 +9,12 @@ namespace EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Controllers
     public interface IOpenAiTextController
     {
         bool IsValid { get; }
-        string GetTitle(string text);
+        string GetTitle(PhrasesConfiguration config, string text);
 
-        string GetDescription(string text);
+        string GetDescription(PhrasesConfiguration config, string text);
         
-        string GetFullText(string text);
+        string GetFullText(PhrasesConfiguration config, string text);
 
-        string GetImageUrl(string text);
+        string GetImageUrl(PhrasesConfiguration config, string text);
     }
 }

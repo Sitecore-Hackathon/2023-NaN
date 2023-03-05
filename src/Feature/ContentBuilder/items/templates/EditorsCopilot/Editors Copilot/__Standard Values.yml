@@ -1,9 +1,8 @@
----
+﻿---
 ID: "c3a7c4b5-a09c-46b6-b5a8-9b366124f84c"
 Parent: "6357e2f4-2680-4c5e-832b-9e7567471874"
 Template: "6357e2f4-2680-4c5e-832b-9e7567471874"
 Path: /sitecore/templates/Feature/EditorsCopilot/Editors Copilot/__Standard Values
-DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
@@ -12,10 +11,50 @@ SharedFields:
   Hint: __Sortorder
   Value: 100
 Languages:
+- Language: "de-DE"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "14f30ff3-f8fd-4be4-a4fa-1631d1e1dc3f"
+      Hint: Title Phrase
+      Value: Erklären Sie einen Satz
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230304T233523Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "7f8c6f6f-4222-4908-8d94-9adee2904957"
+      Hint: Description Phrase
+      Value: Erklären Sie in wenigen Sätzen
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d76bf443-8828-4362-a019-ae929be9d24c"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230305T000533Z
+    - ID: "e2c7db2d-cd31-4908-a08d-2a678c0d12c1"
+      Hint: Full Text Phrase
+      Value: Erklären
+    - ID: "e5fbb787-7565-457d-976a-df511c2dfb85"
+      Hint: Start With
+      Value: begann mit
 - Language: en
   Versions:
   - Version: 1
     Fields:
+    - ID: "14f30ff3-f8fd-4be4-a4fa-1631d1e1dc3f"
+      Hint: Title Phrase
+      Value: Explain one sentence
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20230304T131422Z
@@ -27,13 +66,59 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\Admin
+    - ID: "7f8c6f6f-4222-4908-8d94-9adee2904957"
+      Hint: Description Phrase
+      Value: Explain in a few sentences
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "f645e692-2815-4316-a31d-80327d82d65e"
+      Value: "aa71ff4a-9e5a-475a-9a5e-ee33fe32a45c"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230304T133444Z
+      Value: 20230305T000513Z
+    - ID: "e2c7db2d-cd31-4908-a08d-2a678c0d12c1"
+      Hint: Full Text Phrase
+      Value: Explain
+    - ID: "e5fbb787-7565-457d-976a-df511c2dfb85"
+      Hint: Start With
+      Value: started with
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "14f30ff3-f8fd-4be4-a4fa-1631d1e1dc3f"
+      Hint: Title Phrase
+      Value: Explica una frase
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230304T233633Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "7f8c6f6f-4222-4908-8d94-9adee2904957"
+      Hint: Description Phrase
+      Value: Explica en pocas frases
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ec0ebe8e-edbd-4754-b96e-0ead5d0cb0fa"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230305T000522Z
+    - ID: "e2c7db2d-cd31-4908-a08d-2a678c0d12c1"
+      Hint: Full Text Phrase
+      Value: Explicar
+    - ID: "e5fbb787-7565-457d-976a-df511c2dfb85"
+      Hint: Start With
+      Value: comenzó con

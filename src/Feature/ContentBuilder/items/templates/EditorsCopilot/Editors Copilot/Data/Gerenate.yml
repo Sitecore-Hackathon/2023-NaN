@@ -1,9 +1,8 @@
----
+﻿---
 ID: "10d06985-dadc-4dc7-986f-1219e5b47e2a"
 Parent: "78d1d991-90ae-4e2e-845a-ae1eb11930db"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
 Path: /sitecore/templates/Feature/EditorsCopilot/Editors Copilot/Data/Gerenate
-DB: master
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type
@@ -11,6 +10,9 @@ SharedFields:
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 100
+- ID: "be351a73-fcb0-4213-93fa-c302d8ab4f51"
+  Hint: Shared
+  Value: 1
 Languages:
 - Language: en
   Versions:
@@ -29,11 +31,11 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "af28aa15-80ff-4aa9-8cf6-a375077fc8ff"
+      Value: "6a0f2185-edf7-4d5a-a7ac-6ec47d32cb17"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230304T133451Z
+      Value: 20230305T000457Z

@@ -1,8 +1,11 @@
 ﻿using System;
+using EditorsCopilot.Foundation.OpenAI.Core.Core;
 using EditorsCopilot.Foundation.OpenAI.Core.Core.Interfaces.Controllers;
+using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
+using Sitecore.Globalization;
 using Sitecore.SecurityModel;
 
 namespace EditorsCopilot.Feature.ContentBuilder.Core.Services
@@ -32,6 +35,7 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Services
         private void PopulateItemContentInternal(string topic, Item item)
         {
             var ownFieldCollection = item.Template.OwnFields;
+            var config = GetConfig(item.Language);
             using (new SecurityDisabler())
             {
                 using (new EditContext(item))
@@ -43,15 +47,15 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Services
                         {
                             if (type is TextField)
                             {
-                                item[field.Key] = _openAi.GetTitle(topic);
+                                item[field.Key] = _openAi.GetTitle(config, topic);
                             }
                             else if (type is HtmlField)
                             {
-                                item[field.Key] = _openAi.GetDescription(topic);
+                                item[field.Key] = _openAi.GetDescription(config, topic);
                             }
                             else if (type is ImageField)
                             {
-                                var url = _openAi.GetImageUrl(topic);
+                                var url = _openAi.GetImageUrl(config, topic);
                                 if (!string.IsNullOrEmpty(url))
                                 {
                                     var media = _mediaItemService.UrlToMediaItem(url, item.Database);
@@ -66,6 +70,23 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Services
                     }
                 }
             }
+        }
+
+        private PhrasesConfiguration GetConfig(Language language)
+        {
+            var db = Database.GetDatabase(Constants.ModuleDatabase);
+            var item = db.GetItem(Constants.Items.Module, language);
+            return new PhrasesConfiguration()
+            {
+                TitlePhrase = item?.Fields[Constants.Fields.TitlePhrase]?.Value ?? Constants.DefaultValues.TitlePhrase,
+                DescriptionPhrase = item?.Fields[Constants.Fields.DescriptionPhrase]?.Value ??
+                                    Constants.DefaultValues.DescriptionPhrase,
+                FullTextPhrase = item?.Fields[Constants.Fields.FullTextPhrase]?.Value ??
+                                 Constants.DefaultValues.FullTextPhrase,
+                StartedWith = item?.Fields[Constants.Fields.StartWith]?.Value ??
+                              Constants.DefaultValues.StartWith,
+                Language = language.Name,
+            };
         }
     }
 }
