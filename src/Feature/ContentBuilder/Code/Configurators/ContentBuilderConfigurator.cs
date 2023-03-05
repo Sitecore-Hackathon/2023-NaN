@@ -20,7 +20,7 @@ namespace EditorsCopilot.Feature.ContentBuilder.Core.Configurators
                     ApiToken = db.GetItem(Constants.Items.Module)?.Fields[Constants.Fields.OpenAIKey]?.Value,
                 };
             });
-            serviceCollection.AddSingleton<IItemContentService, ItemContentService>();
+            serviceCollection.AddTransient<IItemContentService, ItemContentService>();
         }
     }
 }
