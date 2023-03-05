@@ -75,6 +75,11 @@ After installation, make the following settings:
 -  This template has `Enable AI Content Generation` checkbox that is enabled by default, by you can disable it in future.
 ![image](https://user-images.githubusercontent.com/6066018/222932130-3bec9ab7-c52d-4787-82a6-6584cf11d6b9.png)
 
+5. Multi-language support
+- Create the required language version for item `/sitecore/system/Modules/Editors Copilot` (e.g. Spanish [es-ES])
+- Populate 'Phrases' section with translated texts:
+![image](https://user-images.githubusercontent.com/17599747/222935447-9dbe1cf0-8809-48b9-8951-c3d4930bd074.png)
+
 
 ## Usage instructions
 
@@ -89,6 +94,9 @@ Additionaly, for any item you can use context menu to populate content with AI:
 2. Type short topic for content generation:
 
 ![image](https://user-images.githubusercontent.com/6066018/222933379-eba5718c-3477-41ff-9a24-169e562de76f.png)
+
+3. To generate content in another language, rather then English, select the required language and use `Insert -> New Item` or `Fill with AI content`. The content should be generated in the item language (if the translations are provided in `/sitecore/system/Modules/Editors Copilot` - see **Configuration** section)
+![image](https://user-images.githubusercontent.com/17599747/222935511-08edd79b-9b86-4806-99d2-e2b753503175.png)
 
 
 
