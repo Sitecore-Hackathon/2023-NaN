@@ -19,6 +19,7 @@ Editor's Copilot is based on OpenAI's GPT (Generative Pre-trained Transformer) m
 - The model solves the problem of filling with test content by generating text and images based on the entered data (Item name, values entered in text fields). The module automatically suggests and fills in the fields of the page with text and images.
 - Multilanguage support
 
+![image](https://user-images.githubusercontent.com/6066018/222935663-262bad7b-d1f3-4deb-a90d-b416b8856abf.png)
 
 
 ## Video link
