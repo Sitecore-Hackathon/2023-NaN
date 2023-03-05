@@ -17,6 +17,7 @@ Editor's Copilot is based on OpenAI's GPT (Generative Pre-trained Transformer) m
   - The purpose of Editor's Copilot is to help editors to populate content more efficiently and accurately by reducing the time spent on writing.
   - At the first stage, it solves the problem of filling the content with test data based on the data already entered. Potentially - to tell the editor exactly what he wants to write in the future
 - The model solves the problem of filling with test content by generating text and images based on the entered data (Item name, values entered in text fields). The module automatically suggests and fills in the fields of the page with text and images.
+- Multilanguage support
 
 
 
