@@ -79,7 +79,7 @@ After installation, make the following settings:
 5. Multi-language support
 - Create the required language version for item `/sitecore/system/Modules/Editors Copilot` (e.g. Spanish [es-ES])
 - Populate 'Phrases' section with translated texts:
-![image](https://user-images.githubusercontent.com/17599747/222935447-9dbe1cf0-8809-48b9-8951-c3d4930bd074.png)
+![image](https://user-images.githubusercontent.com/17599747/222935633-243b8758-439c-48e3-9fb4-04c6a75b88c1.png)
 
 
 ## Usage instructions
