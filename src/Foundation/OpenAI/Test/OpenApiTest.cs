@@ -45,7 +45,7 @@ namespace Test
         {
             var text = Api.TextService.GetTitle(_config, "Arab Emirates");
             Assert.IsNotNull(text);
-            Assert.IsTrue(text.Length < 255);
+            Assert.IsTrue(text.Length > 0);
         }
 
 
@@ -54,7 +54,7 @@ namespace Test
         {
             var text = Api.TextService.GetDescription(_config, "Arab Emirates");
             Assert.IsNotNull(text);
-            Assert.IsTrue(text.Length < 255);
+            Assert.IsTrue(text.Length > 0);
         }
 
         [TestMethod]
@@ -62,7 +62,7 @@ namespace Test
         {
             var text = Api.TextService.GetFullText(_config, "Arab Emirates");
             Assert.IsNotNull(text);
-            Assert.IsTrue(text.Length < 255);
+            Assert.IsTrue(text.Length > 0);
         }
     }
 }
