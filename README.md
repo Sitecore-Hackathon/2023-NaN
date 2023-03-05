@@ -24,7 +24,7 @@ Editor's Copilot is based on OpenAI's GPT (Generative Pre-trained Transformer) m
 
 A short video describing how it works
 
-[![Editor's  Copilot](https://youtu.be/Fzl5nA4IK8U "Editor's  Copilot")
+[Youtube](https://www.youtube.com/watch?v=Fzl5nA4IK8U)
 
 
 ## Pre-requisites and Dependencies
